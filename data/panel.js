@@ -40,7 +40,11 @@ self.port.on('init',function(data){
 
 		var container = createElement("DIV","container");
 		var favico = createElement("SPAN","favico",(i+1));
-		var title = createElement("SPAN","title",tdata.title,tdata.url);
+		if(!tdata.title || tdata.title.length < 1){
+			var title = createElement("SPAN","title",tdata.url,tdata.url);
+		}else{
+			var title = createElement("SPAN","title",tdata.title,tdata.url);
+		}
 		var openHere = createElement("SPAN","openhere","Open Here");
 
 		(function(url,node){
