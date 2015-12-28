@@ -26,7 +26,7 @@ var panel = panels.Panel({
 function handleChange(state) {
 	if (state.checked) {
 		panel.show({
-			width:500,
+			width:505,
 			height:500,
 			position: button
 		});
