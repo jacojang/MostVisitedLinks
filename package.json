@@ -1,0 +1,16 @@
+{
+  "title": "Most Visited Links",
+  "name": "mostvisitedlink",
+  "version": "0.1.0",
+  "description": "Action button for most visited links",
+  "main": "index.js",
+  "author": "jacojang",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "keywords": [
+    "jetpack"
+  ]
+}

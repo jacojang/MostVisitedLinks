@@ -1,0 +1,62 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.tbar {
+	height:30px;
+	line-height:30px;
+	font-size: 1.2em;
+	font-weight: bold;
+	color:777777;
+	text-align: center;
+	border-bottom: 3px solid #53A754;
+}
+.contents {
+	background-color:#EFEFEF;
+}
+.container {
+	padding: 3px;
+	both: clear;
+	height: 25px;
+	border-bottom: 1px dotted #DEDEDE;
+	line-height: 25px;
+	display: table;
+}
+
+.favico {
+	float:left;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	font-weight: bold;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.title {
+	float:left;
+	width: 375px;
+	height: 25px;
+	line-height: 25px;
+	cursor:pointer;
+	padding-left: 5px;
+	padding-right: 5px;
+	vertical-align: middle;
+	display: table-cell;
+}
+
+.openhere {
+	float:left;
+	width:70px;
+	height: 25px;
+	line-height: 25px;
+	border:1px solid gray;
+	border-radius: 3px;
+	color:white;
+	font-weight: bold;
+	cursor:pointer;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #1F5586;
+	display: table-cell;
+}
