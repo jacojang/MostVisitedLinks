@@ -5,7 +5,13 @@ let { search } = require("sdk/places/history");
 var { ToggleButton } = require('sdk/ui/button/toggle');
 var panels = require("sdk/panel");
 var self = require("sdk/self");
-
+var mvldb = require("lib/mvldb");
+mvldb.open("1",30,function(){
+	mvldb.removeOldItems();
+	setInterval(function(){
+		mvldb.removeOldItems();
+	},7200000);
+});
 var button = ToggleButton({
 	id: "mostvisitedlink",
 	label: "Most visited link",
@@ -36,8 +42,8 @@ function handleChange(state) {
 		  [{ from: lastWeek }],
 		  { sort: "visitCount", descending:true }
 		).on("end", function (results) {
-			console.log(results);
-			panel.port.emit('init',results);
+			//console.log(results);
+			panel.port.emit('init',results,mvldb.getHistory());
 		});
 	}
 }
@@ -47,11 +53,13 @@ function handleHide() {
 }
 
 panel.port.on('openNewTab',function(url){
+	mvldb.addItem(url);
 	tabs.open(url);
 	panel.hide();
 });
 
 panel.port.on('openNewHere',function(url){
+	mvldb.addItem(url);
 	tabs.activeTab.url = url;
 	tabs.activeTab.activate();
 	panel.hide();

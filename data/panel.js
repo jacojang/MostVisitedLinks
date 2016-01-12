@@ -24,9 +24,22 @@ function createElement(type,classname,text,tooltip){
 	return t;
 }
 
-self.port.on('init',function(data){
+self.port.on('init',function(data,history){
 	var contents = document.getElementById('contents');
 	if(!contents) return;
+
+	var top30 = [];
+	for(var i=0; i<data.length && i < 30 ; i++){
+		var tdata = data[i];
+		if(history.hasOwnProperty(tdata['url'])){
+			tdata["visitCount"] += (parseInt(history[tdata["url"]])*2);
+		}
+		top30.push(tdata);
+	}
+
+	top30.sort(function(a,b){
+		return b["visitCount"] - a["visitCount"];
+	})
 
 	// Erase All list
 	while(contents.firstChild){
@@ -35,8 +48,8 @@ self.port.on('init',function(data){
 
 	// Build List
 	// favico, title(url), openHere
-	for(var i = 0 ; i < data.length && i < 20 ; i++){
-		var tdata = data[i];
+	for(var i = 0 ; i < top30.length && i < 20 ; i++){
+		var tdata = top30[i];
 
 		var container = createElement("DIV","container");
 		var favico = createElement("SPAN","favico",(i+1));
