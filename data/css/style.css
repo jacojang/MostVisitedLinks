@@ -1,6 +1,7 @@
 * {
 	margin: 0px;
 	padding: 0px;
+	overflow: hidden;
 }
 .tbar {
 	height:30px;
@@ -17,7 +18,7 @@
 .container {
 	float:left;
 	padding: 2px;
-	height: 118px;
+	height: 108px;
 	width:80px;
 	border: 1px solid #DEDEDE;
 	margin: 2px;
@@ -28,20 +29,27 @@
 }
 
 .favico_img {
-	width: 64px;
-	height: 64px;
+	position:absolute;
+	max-width: 55px;
+	max-height: 55px;
 	border:0px;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
 }
 
 .favico {
+	position: relative;
 	width: 80px;
-	height: 70px;
-	line-height: 70px;
-	font-size:60px;
+	height: 60px;
+	line-height: 60px;
+	font-size:55px;
 	font-weight: bold;
 	text-align: center;
 	vertical-align: middle;
-	display: table-row;
+	display: inline-block;
 }
 
 .title {

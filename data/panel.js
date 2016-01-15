@@ -33,7 +33,7 @@ function getRepChar(tdata)
 
 	var ret = getTitleCharReg.exec(tdata.url);
 	if(ret.length < 2) return "J";
-	return ret[1];
+	return ret[1].toUpperCase();
 }
 
 self.port.on('show_favico',function(url,id){

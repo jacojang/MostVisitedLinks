@@ -1,3 +1,4 @@
+let daysAgo = 30;
 var self = require('sdk/self');
 var tabs = require("sdk/tabs");
 let { search } = require("sdk/places/history");
@@ -7,7 +8,7 @@ var { ToggleButton } = require('sdk/ui/button/toggle');
 var panels = require("sdk/panel");
 var self = require("sdk/self");
 var mvldb = require("lib/mvldb");
-mvldb.open("1",30,function(){
+mvldb.open("1",daysAgo,function(){
 	mvldb.removeOldItems();
 	setInterval(function(){
 		mvldb.removeOldItems();
@@ -33,12 +34,12 @@ var panel = panels.Panel({
 function handleChange(state) {
 	if (state.checked) {
 		panel.show({
-			width:450,
-			height:540,
+			width:454,
+			height:500,
 			position: button
 		});
 
-		let lastWeek = Date.now - (1000*60*60*24*7);
+		let lastWeek = Date.now - (1000*60*60*24*daysAgo);
 		search(
 		  [{ from: lastWeek }],
 		  { sort: "visitCount", descending:true }

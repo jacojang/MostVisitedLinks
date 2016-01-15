@@ -1,7 +1,7 @@
 {
   "title": "Most Visited Links",
   "name": "mostvisitedlink",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Action button for most visited links",
   "main": "index.js",
   "author": "jacojang",
