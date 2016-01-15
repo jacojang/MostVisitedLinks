@@ -9,3 +9,6 @@ Action button for most visited links
 	  * favico support
   * v0.2.0
 	  * add weighting function for user-click
+
+## Roadmap
+  * Add 'ignore' tab and button for 'ignore' list management
