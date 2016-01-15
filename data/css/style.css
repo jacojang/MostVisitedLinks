@@ -15,45 +15,51 @@
 	background-color:#EFEFEF;
 }
 .container {
-	padding: 3px;
-	both: clear;
-	height: 25px;
-	border-bottom: 1px dotted #DEDEDE;
+	float:left;
+	padding: 2px;
+	height: 118px;
+	width:80px;
+	border: 1px solid #DEDEDE;
+	margin: 2px;
 	line-height: 25px;
 	display: table;
+	cursor:pointer;
+	text-align: center;
+}
+
+.favico_img {
+	width: 64px;
+	height: 64px;
+	border:0px;
 }
 
 .favico {
-	float:left;
-	width: 25px;
-	height: 25px;
-	text-align: center;
+	width: 80px;
+	height: 70px;
+	line-height: 70px;
+	font-size:60px;
 	font-weight: bold;
+	text-align: center;
 	vertical-align: middle;
-	display: table-cell;
+	display: table-row;
 }
 
 .title {
-	float:left;
-	width: 375px;
+	width: 80px;
 	height: 25px;
 	line-height: 25px;
 	cursor:pointer;
-	padding-left: 5px;
-	padding-right: 5px;
+	font-size:10px;
 	vertical-align: middle;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	display:inline-block;
 	white-space: nowrap;
 }
 
 .openhere {
-	float:right;
-	width:70px;
+	width: 80px;
 	height: 25px;
 	line-height: 25px;
-	border:1px solid gray;
 	border-radius: 3px;
 	color:white;
 	font-weight: bold;
@@ -61,5 +67,4 @@
 	text-align: center;
 	vertical-align: middle;
 	background-color: #1F5586;
-	display: table-cell;
 }

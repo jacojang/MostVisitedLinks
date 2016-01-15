@@ -1,6 +1,7 @@
 var self = require('sdk/self');
 var tabs = require("sdk/tabs");
 let { search } = require("sdk/places/history");
+let { getFavicon } = require("sdk/places/favicon");
 
 var { ToggleButton } = require('sdk/ui/button/toggle');
 var panels = require("sdk/panel");
@@ -32,8 +33,8 @@ var panel = panels.Panel({
 function handleChange(state) {
 	if (state.checked) {
 		panel.show({
-			width:505,
-			height:500,
+			width:450,
+			height:540,
 			position: button
 		});
 
@@ -63,4 +64,10 @@ panel.port.on('openNewHere',function(url){
 	tabs.activeTab.url = url;
 	tabs.activeTab.activate();
 	panel.hide();
+});
+
+panel.port.on('get_favico',function(inUrl,id){
+	getFavicon(inUrl).then(function (url) {
+		panel.port.emit("show_favico",url,id);
+	});
 });
